@@ -10,4 +10,13 @@
    } else {
       echo "Opened database successfully\n";
    }
+	
+	$sql = "CREATE TABLE CONTACT(NAME TEXT NOT NULL,EMAIL TEXT NOT NULL,COMMENT TEXT NOT NULL)";
+	$ret = pg_query($db, $sql); 
+	if(!$ret) { 
+		echo pg_last_error($db); 
+	} else { 
+		echo "Table created successfully\n"; 
+	} 
+	pg_close($db);
 ?>
