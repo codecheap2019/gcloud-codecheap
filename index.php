@@ -10,13 +10,15 @@
    } else {
       echo "Opened database successfully\n";
    }
-	
-	$sql = "CREATE TABLE CONTACT(NAME TEXT NOT NULL,EMAIL TEXT NOT NULL,COMMENT TEXT NOT NULL)";
+	$name = "Rajesh Mondal";
+	$email = "abc@gmail.con";
+	$comnent = "Hello World!";
+	$sql = "INSERT INTO CONTACT(NAME,EMAIL,COMMENT) VALUES($name,$email,$comment)";
 	$ret = pg_query($db, $sql); 
 	if(!$ret) { 
 		echo pg_last_error($db); 
 	} else { 
-		echo "Table created successfully\n"; 
+		echo "Record Inserted Successfully\n"; 
 	} 
 	pg_close($db);
 ?>
