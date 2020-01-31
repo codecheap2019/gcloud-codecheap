@@ -16,13 +16,14 @@
       EMAIL           TEXT     NOT NULL,
       MOBILE       CHAR(10),
       COMMENT        TEXT)";
-	$sql = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ('Rajesh Mondal', 'rajeshmondal9007@gmail.com','9007614782', 'Hello World')";
-
+	$sql3 = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ('Rajesh Mondal', 'rajeshmondal9007@gmail.com','9007614782', 'Hello World')";
+	
+	$sql = "SELECT * from CONTACT";
    $ret = pg_query($db, $sql);
    if(!$ret) {
       echo pg_last_error($db);
    } else {
-      echo "Table created successfully\n";
+      echo $ret;
    }
    pg_close($db);
 ?>
