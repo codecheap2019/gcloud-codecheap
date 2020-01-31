@@ -4,27 +4,23 @@
    $dbname      = "dbname = d7pkis5qdkbu86";
    $credentials = "user = smwujrysziwkxj password=eea0cf153dc8883a6f5a9f288a07ee766b89a7a7fb9863914b572abf4a7c3927";
 
+	$name = $_GET['name'];
+	$email = $_GET['email'];
+	$mobile = $_GET['monbile'];
+	$comment = $_GET['comment'];
+
    $db = pg_connect( "$host $port $dbname $credentials"  );
    if(!$db) {
       echo "Error : Unable to open database\n";
-   } else {
-      echo "Opened database successfully\n";
    }
+
+	$sql = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ($name, $email, $mobile, $comment)";
    
-   $sql2 ="CREATE TABLE CONTACT
-      (NAME           TEXT    NOT NULL,
-      EMAIL           TEXT     NOT NULL,
-      MOBILE       CHAR(10),
-      COMMENT        TEXT)";
-	$sql3 = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ('Rajesh Mondal', 'rajeshmondal9007@gmail.com','9007614782', 'Hello World')";
-	
-	$sql = "SELECT * from CONTACT";
-   $ret = pg_query($db, $sql);
+	$ret = pg_query($db, $sql);
    if(!$ret) {
       echo pg_last_error($db);
    } else {
-		$row = pg_fetch_row($ret);
-      echo var_dump($row);
+		echo $ret;
    }
    pg_close($db);
 ?>
