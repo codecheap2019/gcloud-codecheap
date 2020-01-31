@@ -16,7 +16,7 @@
       EMAIL           TEXT     NOT NULL,
       MOBILE       INT,
       COMMENT        TEXT)";
-	$sql = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ('Rajesh Mondal', 'rajeshmondal9007@gmail.com', 9007614782, 'Hello World')";
+	$sql = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ('Rajesh Mondal', 'rajeshmondal9007@gmail.com', 'Hello World')";
 
    $ret = pg_query($db, $sql);
    if(!$ret) {
