@@ -23,7 +23,8 @@
    if(!$ret) {
       echo pg_last_error($db);
    } else {
-      echo $ret;
+		$row = pg_fetch_row($ret);
+      echo $row;
    }
    pg_close($db);
 ?>
