@@ -14,7 +14,7 @@
       echo "Error : Unable to open database\n";
    }
 
-	$sql = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ($name, $email, $mobile, $comment)";
+	$sql = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ($name, $email,'9007614782', $comment)";
    
 	$ret = pg_query($db, $sql);
    if(!$ret) {
