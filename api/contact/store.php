@@ -24,7 +24,7 @@
       echo pg_last_error($db);
    } else {
 		$row = pg_fetch_row($ret);
-      echo $row;
+      echo var_dump($row);
    }
    pg_close($db);
 ?>
