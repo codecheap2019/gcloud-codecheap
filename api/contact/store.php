@@ -11,12 +11,12 @@
       echo "Opened database successfully\n";
    }
    
-   $sql2 ="CREATE TABLE CONTACT
+   $sql ="CREATE TABLE CONTACT
       (NAME           TEXT    NOT NULL,
       EMAIL           TEXT     NOT NULL,
-      MOBILE       INT,
+      MOBILE       CHAR(10),
       COMMENT        TEXT)";
-	$sql = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ('Rajesh Mondal', 'rajeshmondal9007@gmail.com', 'Hello World')";
+	$sql2 = "INSERT INTO CONTACT (NAME,EMAIL,MOBILE,COMMENT) VALUES ('Rajesh Mondal', 'rajeshmondal9007@gmail.com', 'Hello World')";
 
    $ret = pg_query($db, $sql);
    if(!$ret) {
